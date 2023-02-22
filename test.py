@@ -1,9 +1,10 @@
 from datetime import datetime 
-print("================================================\n"
+
+def Affichermenu():
+    print("================================================\n"
       "++++++++++++++++++++ MENU ++++++++++++++++++++++\n"
       "================================================\n")
 
-def menu():
     print("1- Enregistrer une personne")
     print("2- Liste des personnes enregistrées")
     print("3- Rechercher un utilisateur par sa date d'enregistrement")
@@ -24,14 +25,22 @@ def inscription():
         print("Enregistrement effectué ! \n")
     fichier.close() 
 
-menu()
-menu = int(input("Taper 1 pour vous enregister, 2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+
+Affichermenu()
+menu = int(input("Taper:\n1 pour vous enregister \n2 pour consulter la liste \n3 Rechercher un utilisateur \n4 pour quitter\n"))
+
 match menu:
     case(1):
         inscription()
-        print("Voulez vous continuer?")
-        tryagain = int(input("1 pour oui et 2 pour non"))
-        if tryagain == 1:
+        print("Voulez vous continuer? \n")
+        tryagain = int(input("1 pour oui et 2 pour non \n"))
+        match tryagain:
+          case(1):
+            Affichermenu()
+            inscription()
+          case(2):
+            print("Aurevoir")
+        
     case(2):
         with open("liste.txt", "r") as fichier:
             print("liste du fichier:")
