@@ -1,18 +1,23 @@
 from datetime import datetime 
 
+# Function d'affichage du menu
 def Affichermenu():
-    print("================================================\n"
-      "++++++++++++++++++++ MENU ++++++++++++++++++++++\n"
-      "================================================\n")
+    print("#############################################\n"
+          "###                                       ###\n"
+          "###          PROGRAMME DE GESTION         ###\n"
+          "###              DES PERSONNES            ###\n"
+          "###                                       ###\n"
+          "#############################################\n")
 
     print("1- Enregistrer une personne")
     print("2- Liste des personnes enregistrées")
     print("3- Rechercher un utilisateur par sa date d'enregistrement")
     print("4- Quitter \n")
 
+# Function de demande 
 def demanderMenu():
-    menu = int(input("Taper:\n1 pour vous enregister \n2 pour consulter la liste \n3 Rechercher un utilisateur \n4 pour quitter\n"))
-
+    menu = int(input("Faite votre choix ::\n"))
+    return menu
 
 #fonction permettant d'enregistrer les informations entréés à l'inscription dans un fichier nommé liste.txt
 def inscription():
@@ -32,7 +37,8 @@ def inscription():
 #affichage du menu by lagama
 # CE CODE EST FANTASTIQUE
 Affichermenu()
-menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+#menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+menu = demanderMenu()
 
 match menu:
     case(1):
