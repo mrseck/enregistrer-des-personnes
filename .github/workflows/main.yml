@@ -1,0 +1,20 @@
+name: Unitest
+
+on:
+  push:
+    Branches: [master]
+  pull_request:
+    Branches: [master]
+  
+jobs:
+  build:
+   runs-on: ubuntu-latest
+step:
+  - use: actions/checkout@v3 
+  - name: Unit Testing With Python
+  # You may pin to the exact commit or the version.
+  # uses: PrajjawalBanati/Python-actions@a6d7420add2bf83557fec5ddf443f24f27e661fc
+    uses: PrajjawalBanati/Python-actions@0.0.1
+    with:
+    # Always push your code and test case file as name.py and test_name.py
+      src: # optional
