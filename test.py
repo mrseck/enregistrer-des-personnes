@@ -10,6 +10,10 @@ def Affichermenu():
     print("3- Rechercher un utilisateur par sa date d'enregistrement")
     print("4- Quitter \n")
 
+def demanderMenu():
+    menu = int(input("Taper:\n1 pour vous enregister \n2 pour consulter la liste \n3 Rechercher un utilisateur \n4 pour quitter\n"))
+
+
 #fonction permettant d'enregistrer les informations entréés à l'inscription dans un fichier nommé liste.txt
 def inscription():
     nom = input("Entrer votre nom: \n")
@@ -27,19 +31,26 @@ def inscription():
 
 
 Affichermenu()
-menu = int(input("Taper:\n1 pour vous enregister \n2 pour consulter la liste \n3 Rechercher un utilisateur \n4 pour quitter\n"))
+menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
 
 match menu:
     case(1):
         inscription()
         print("Voulez vous continuer? \n")
         tryagain = int(input("1 pour oui et 2 pour non \n"))
-        match tryagain:
-          case(1):
+        while tryagain == 1:
+            Affichermenu()
+            menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+            inscription()
+
+        if tryagain == 2:
+            print("Aurevoir")
+
+        if tryagain != 1 & tryagain != 2:
+            print("Vous avez entré le mauvais chiffre")
             Affichermenu()
             inscription()
-          case(2):
-            print("Aurevoir")
+        
         
     case(2):
         with open("liste.txt", "r") as fichier:
