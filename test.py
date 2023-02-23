@@ -16,7 +16,7 @@ def Affichermenu():
 
 # Function de demande 
 def demanderMenu():
-    menu = int(input("Faite votre choix :\n"))
+    menu = int(input("Faite votre choix ::\n"))
     return menu
 
 #fonction permettant d'enregistrer les informations entréés à l'inscription dans un fichier nommé liste.txt
