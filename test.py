@@ -29,7 +29,7 @@ def inscription():
         print("Enregistrement effectué ! \n")
     fichier.close() 
 
-
+#affichage du menu by lagama
 Affichermenu()
 menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
 
