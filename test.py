@@ -17,6 +17,7 @@ def Affichermenu():
 # Function de demande 
 def demanderMenu():
     menu = int(input("Faite votre choix :\n"))
+    return menu
 
 #fonction permettant d'enregistrer les informations entréés à l'inscription dans un fichier nommé liste.txt
 def inscription():
@@ -35,7 +36,8 @@ def inscription():
 
 
 Affichermenu()
-menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+#menu = int(input("Taper:1 pour vous enregister,2 pour consulter la liste, 3 Rechercher un utilisateur ou 4 pour quitter\n"))
+menu = demanderMenu()
 
 match menu:
     case(1):
